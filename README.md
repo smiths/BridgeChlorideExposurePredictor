@@ -6,7 +6,7 @@ Theory support: Mingsai Xu
 
 Date of project start: January 19, 2024
 
-This software investigates how climate and traffic might impact corrosion-induced damage for reinforced concrete bridges by influencing chloride exposure.
+This software investigates how climate and traffic might impact corrosion-induced damage for reinforced concrete bridges by influencing chloride exposure. Further details of the problem, the requirements, the design and verification can be found as part of the [full documentation](https://cynthialiu0805.github.io/BridgeChlorideExposurePredictor/).
 
 
 The folders and files for this software are as follows:
