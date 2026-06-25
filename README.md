@@ -75,7 +75,9 @@ Normally virtual environments are available through Python on a Mac.
 
 <details>
 <summary><h4>Linux</h4></summary>
+
 On Linux you may need to install the `venv` package via: `sudo apt install python3-venv`.
+
 </details>
 
 ### Node and npm
@@ -147,17 +149,23 @@ After installation, restart PowerShell or the Terminal.
     
        <details>
        <summary><h4>Windows</h4></summary>
+
        `venv\Scripts\Activate.ps1`
+       
        </details>
 
        <details>
        <summary><h4>Mac</h4></summary>
+
        `source venv/bin/activate`
+       
        </details>
 
        <details>
        <summary><h4>Linux</h4></summary>
+
        `source venv/bin/activate`
+       
        </details>
        
 
@@ -165,8 +173,6 @@ After installation, restart PowerShell or the Terminal.
 5. Type `make database` to generate the chloride exposure database.
 6. Type `make web` to run the software on the local machine. 
 7. You should see the message from terminal saying that the software is running successfully in localhost. Usually it is http://127.0.0.1:5000 but it might differ on your machine.
-8. You can close the browser when you are done and stop the local host from the terminal using control C.
-9. If you wish you can deactivate the Python virtual environment via typing `deactivate`.
 
 ### Alternative ways to run
 If the above method does not work, you can try the following in the root folder of this repo:
