@@ -61,9 +61,7 @@ Python is usually pre-installed on Linux. You can verify this via `python3 --ver
 
 </details>
 
-### Python Virtual Environment (Recommended)
-
-To avoid dependency conflicts, it is recommended to use a Python virtual environment.
+### Python virtual environments (venv)
 
 <details>
 <summary><h4>Windows</h4></summary>
@@ -79,22 +77,6 @@ Normally virtual environments are available through Python on a Mac.
 <summary><h4>Linux</h4></summary>
 On Linux you may need to install the `venv` package via: `sudo apt install python3-venv`.
 </details>
-
-1. Create the virtual environment in the project root:
-`python -m venv venv`
-
-    This will create a venv directory containing an isolated Python environment for this project.
-
-2. Activate the virtual environment
-
-    On macOS / Linux:  `source venv/bin/activate`
-
-    On Windows (PowerShell):  `venv\Scripts\Activate.ps1`
-
-    If you encounter an execution policy error in PowerShell, you may need to run:
-    `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`
-
-After activation, your terminal prompt should be prefixed with `(venv)`.
 
 ### Node and npm
 `Node.js` provides a JavaScript runtime environment to execute the JavaScript code outside a web browser.  Npm is the package manager for Node.
@@ -156,11 +138,35 @@ After installation, restart PowerShell or the Terminal.
 1. Open the command line terminal (for Mac OS or Linux) or PowerShell (for Windows).
 2. Clone this repo via `git clone` in your folder of choice
 3. `cd` into the repo (`BridgeChlorideExposurePredictor` by default)
-4. Activate the Python virtual environment following the procedure above in [Python Setup](#python-virtual-environment-recommended).
+4. To avoid dependency conflicts, it is recommended to use a Python virtual environment. Activate the Python virtual environment following these steps (after activation, your terminal prompt should be prefixed with `(venv)`):
+
+    1. Create the virtual environment in the project root:
+       `python -m venv venv`
+
+    2. Activate the virtual environment:
+    
+       <details>
+       <summary><h4>Windows</h4></summary>
+       `venv\Scripts\Activate.ps1`
+       </details>
+
+       <details>
+       <summary><h4>Mac</h4></summary>
+       `source venv/bin/activate`
+       </details>
+
+       <details>
+       <summary><h4>Linux</h4></summary>
+       `source venv/bin/activate`
+       </details>
+       
+
 5. Type `make requirements` in the root folder of this repo to install the libraries and dependencies.
 5. Type `make database` to generate the chloride exposure database.
 6. Type `make web` to run the software on the local machine. 
 7. You should see the message from terminal saying that the software is running successfully in localhost. Usually it is http://127.0.0.1:5000 but it might differ on your machine.
+8. You can close the browser when you are done and stop the local host from the terminal using control C.
+9. If you wish you can deactivate the Python virtual environment via typing `deactivate`.
 
 ### Alternative ways to run
 If the above method does not work, you can try the following in the root folder of this repo:
