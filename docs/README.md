@@ -1,28 +1,24 @@
 
 
-This folder holds the documentation for BridgeChlorideExposurePredictor.  The documentation is based on the recommendations for the McMaster University Graduate Course [CAS 741: Development of Scientific Computing Software](https://gitlab.cas.mcmaster.ca/smiths/cas741).  The folders and files are as follows:
+This folder holds the documentation for BridgeChlorideExposurePredictor.  The documentation is based on the recommendations for the McMaster University Graduate Course [CAS 741: Development of Scientific Computing Software](https://gitlab.cas.mcmaster.ca/smiths/cas741).  The documentation is also summarized in:
 
-- `Checklists`: Checklists used to review the design, documentation and implementation of the software.
+W. Spencer Smith. A rational document driven design process for scientific computing software. In Jeffrey C. Carver, Neil Chue Hong, and George Thiruvathukal, editors, Software Engineering for Science, Chapman & Hall/CRC Computational Science, chapter Examples of the Application of Traditional Software Engineering Practices to Science, pages 33–63. Chapman and Hall/CRC, Boca Raton, FL, 2016
 
-- `Comments.tex`: A tex file shared by the other tex files to manage comments so that they can be embeddws in the generated pdfs.  Comments can be set to false so that they do
+The folders and files are as follows:
+
+- `Comments.tex`: A tex file shared by the other tex files to manage comments so that they can be embedded in the generated pdfs.  Comments can be set to false so that they do
 not appear.
 
 - `Common.tex`: To share the program name and author names between all the documentation.
 
 - `Design`: High level design via a Module Guide and detailed design via a Module Interface Specification.
 
-- `Makefile`: Makefile that builds the LaTeX documentation in the other folders.
-
-- `Presentations`: Presentations for early review of the requirements and implementation.
-
 - `ProblemStatementAndGoals`: Summary of the problem BridgeChlorideExposurePredictor is intended to solve.
 
 - `README.md`: this file
 
-- `Reflection`: Reflection on the first pass through the design process and the changes for the next pass.
-
 - `SRS`: Software Requirements Specification.
 
-- `VnVPlan`: `VnVPlan.pdf` contains the Software Verification and Validation Plan for Bridge Corrosion.
+- `VnVPlan`: Contains the Software Verification and Validation Plan for Bridge Corrosion.
 
 - `VnVReport`: Contains the report summarizing the results of executing the verification and validation plan.
