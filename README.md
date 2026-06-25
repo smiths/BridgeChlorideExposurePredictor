@@ -16,22 +16,21 @@ The folders and files for this software are as follows:
 │   ├── boundary.json # boundary of jurisdiction in which software inputs are defined
 │   ├── data.xlsx     # traffic model and climate model
 ├── docs                   
-│   ├── Checklists
 |   ├── Design
 │   |   ├── SoftArchitecture
 │   │   └── SoftDetailedDes 
-│   ├── Presentations                                
 │   ├── ProblemStatementAndGoals
-│   ├── Reflection                                
 │   ├── SRS                
 │   ├── VnVPlan         
 │   └── VnVReport                
 ├── paper
+├── site
 │── src          
 |   ├── database      # code for generating the database 
 |   └── web           # code for user side of the software
 │       ├── public    # files generated from database
 │       └── src       # code for the website
+│── Maketex           # to make LaTeX documentation
 │── Makefile          # quick start commands
 └── requirements.txt  # dependencies
 ```
