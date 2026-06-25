@@ -61,7 +61,7 @@ Python is usually pre-installed on Linux. You can verify this via `python3 --ver
 
 </details>
 
-### Python virtual environments (venv)
+### Python virtual environment (venv)
 
 <details>
 <summary><h4>Windows</h4></summary>
