@@ -4,6 +4,6 @@ geopandas
 numpy
 pandas
 # matplotlib
-plotly
+# plotly
 Openpyxl==3.1.5
 # shapely.geometry
