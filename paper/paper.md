@@ -22,28 +22,32 @@ affiliations:
  - name: McMaster University, Canada
    index: 1
    ror: 02fa3aq29
-date: 25 November 2024
+date: 27 June 2026
 bibliography: paper.bib
 
 # Optional fields if submitting to a AAS journal too, see this blog post:
 # https://blog.joss.theoj.org/2018/12/a-new-collaboration-with-aas-publishing
-aas-doi: 10.3847/xxxxx <- update this with the DOI from AAS once you know it.
-aas-journal: Astrophysical Journal <- The name of the AAS journal.
+# aas-doi: 10.3847/xxxxx <- update this with the DOI from AAS once you know it.
+# aas-journal: Astrophysical Journal <- The name of the AAS journal.
 ---
 
-
 # Summary
-The Bridge Chloride Exposure Predictor (BCEP) is a web-based tool designed to forecast future chloride exposure rates for bridges based on a calculation model [@Xu:2024] developed by Dr. Mingsai Xu and Dr. Cancan Yang, with an assumption that the climate and traffic data is constant within a specific GRID_SIZE for a JURISDICTION. This model integrates traffic and climate data to predict chloride exposure, specifically focusing on damage from deicing salts while excluding other factors such as mechanical wear or accidents. Currently, this model is validated for Ontario, Canada, and a demonstration website for an accessible overview is available [here](https://bcep.onrender.com/). Expanding the tool's applicability requires domain experts or developers to validate the traffic and climate data and generate chloride exposure rates for additional jurisdictions.
-
+The Bridge Chloride Exposure Predictor (BCEP) is a web-based tool designed to forecast future chloride exposure rates for bridges based on a calculation model [@MingsaiEtAl2024] developed by Dr. Mingsai Xu and Dr. Cancan Yang, with an assumption that the climate and traffic data is constant within a specific GRID_SIZE for a given JURISDICTION. This model integrates traffic and climate data to predict chloride exposure, specifically focusing on damage from deicing salts while excluding other factors such as mechanical wear or accidents. Currently, this model is validated for Ontario, Canada. A demonstration website for an accessible overview is available [here](https://bcep.onrender.com/). The tool can be used to investigate chloride exposure for new jurisdictions by providing new traffic and climate data.
 
 # Statement of need
 
-Most highway bridges are constructed with reinforced concrete decks, which are susceptible to chloride-induced corrosion due to adverse weather conditions and traffic patterns. Various factors contribute to this corrosion, including the quality of construction materials and maintenance practices, with deicing salts being a significant contributor. The primary deicing salt used is sodium chloride (rock salt). When rock salt melts the snow and comes into contact with water, it can undergo a chemical reaction, releasing chloride ions. These ions can penetrate the concrete and cause corrosion in the reinforcing steel, thereby compromising the bridge’s structural integrity and load-bearing capacity. Chloride is considered the main source of corrosion damage to reinforced concrete. Chloride ions are transported from the road to the exterior surface of bridge substructures through vehicle spray and splash mechanisms. There is a tight connection between chloride exposure, weather conditions and traffic flow. Specifically, the amount of deicing salt applied on the road surface greatly depends on the amount of snowfall, and the amount of water and dissolved chloride ions that end up on nearby objects depends on the traffic patterns. 
+Most highway bridges are constructed with reinforced concrete decks, which are susceptible to chloride-induced corrosion due to adverse weather conditions and traffic patterns. Various factors contribute to this corrosion, including the quality of construction materials and maintenance practices, with deicing salts being a significant contributor. The primary deicing salt used is sodium chloride (rock salt). When rock salt melts the snow and comes into contact with water, it can undergo a chemical reaction, releasing chloride ions. These ions can penetrate the concrete and cause corrosion in the reinforcing steel, thereby compromising the bridge’s structural integrity and load-bearing capacity. Chloride is considered the main source of corrosion damage to reinforced concrete. Chloride ions are transported from the road to the exterior surface of bridge substructures through vehicle spray and splash mechanisms. There is a tight connection between chloride exposure, weather conditions and traffic flow. Specifically, the amount of deicing salt applied on the road surface greatly depends on the amount of snowfall, and the amount of water and dissolved chloride ions that end up on nearby objects depends on the traffic patterns.
 
-While existing research explores the relationship between chloride and corrosion, there remains a lack of accessible tools, such as a user-friendly website, to visualize chloride exposure rates effectively. Accurate prediction of chloride exposure rates is essential for effective bridge management, construction planning, and research. Government agencies can use this data to prioritize maintenance and allocate budgets efficiently, focusing on bridges with higher corrosion risks. Bridge engineers can use the information to determine minimum structural requirements and ensure that bridges can endure their intended lifespan, particularly during the precise design phase. Researchers, especially those studying the impacts of climate change on infrastructure, benefit from predictive models to understand and mitigate corrosion damage. This project, conducted in collaboration with Dr. Cancan Yang and Dr. Mingsai Xu from McMaster University, highlights the importance of such tools in addressing the challenges posed by chloride-induced corrosion.
+While existing research explores the relationship between chloride and corrosion, there remains a lack of accessible research tool to visualize chloride exposure rates effectively. Accurate prediction of chloride exposure rates is essential for effective bridge management, construction planning, and research. Government agencies can use this data to prioritize maintenance and allocate budgets efficiently, focusing on bridges with higher corrosion risks. Bridge engineers can use the information to determine minimum structural requirements and ensure that bridges can endure their intended lifespan, particularly during the precise design phase. Researchers, especially those studying the impacts of climate change on infrastructure, benefit from predictive models to understand and mitigate corrosion damage. This project, conducted in collaboration with Dr. Cancan Yang from McMaster University, highlights the importance of such tools in addressing the challenges posed by chloride-induced corrosion.
 
+# State of the field
 
-Do we include the theory (the formulas used to calculated chloride exposure rate) somewhere? Or pointing to Mingsai's paper is enough?
+Proprietary tools exist for predicting and designing the service life of different concrete bridge designs, such as [Life-365](https://life-365.org/), [STADIUM](https://www.simcotechnologies.com/what-we-do/stadium-technology-portfolio/stadium-overview/) and [COMSOL](https://www.comsol.com/) models.  However, these tools require an estimate of the expected chloride concentration in the environment around the bridge.  As far as we know BCEP is the first tool to determine this value for a given location via local traffic and climate data.
+
+# Software design
+
+# Research impact statement
+
 
 # Features and usage
 
@@ -121,8 +125,11 @@ To ensure the tool functions correctly, the Excel file must follow specific nami
   - All traffic data (`AADT`, `AADTT`) should be included in a single sheet, as shown in the data format above.
   - The sheet must be named `traffic`.
 
+# AI Usage Disclosure
+
+AI was not used for coding or documentation.  However, AI was used for brainstorming content for the [CONTRIBUTING.md](https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/CONTRIBUTING.md) guide, the [CodeOfConduct.md](https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/CodeOfConduct.md) and the continuous deployment of the documentation via a [GitHub Action](https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/.github/workflows/latex-pages.yml).
 
 # Acknowledgements
-We acknowledge the insights and suggestions from Dr. Mingsai Xu, Dr. Cancan Yang and Dr. Spencer Smith during the development of this program and the preparation of this paper.
+We acknowledge the insights and suggestions from Dr. Cancan Yang during the development of this program and the preparation of this paper.
 
 # References
