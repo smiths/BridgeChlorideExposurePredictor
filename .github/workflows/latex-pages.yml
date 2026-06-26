@@ -78,12 +78,34 @@ jobs:
           #  }
           #}')
 
-          # Generate PDF list (paths relative to site root)
-          PDF_LIST=$(
-          while read -r pdf; do
-            echo "$pdf"
-          done < site/order.txt
+          # Generate ordered list of PDFs
+          PDFS=$(
+            cat site/order.txt
+
+            find public -name "*.pdf" \
+              | sed 's|^public/||' \
+              | grep -vxFf site/order.txt \
+              | sort
           )
+
+          PDF_LIST=$(echo "$PDFS" | awk -F/ '
+          {
+            dir = $1
+            file = $NF
+
+            if (!(dir in seen)) {
+              dirs[++n] = dir
+              seen[dir] = 1
+            }
+
+            groups[dir] = groups[dir] "<li><a href=\"" $0 "\">" file "</a></li>\n"
+          }
+          END {
+            for (i = 1; i <= n; i++) {
+              dir = dirs[i]
+              printf "<h2>%s</h2>\n<ul>\n%s</ul>\n", dir, groups[dir]
+           }
+          }')
 
           # Ensure site template exists
           test -f site/index.html
