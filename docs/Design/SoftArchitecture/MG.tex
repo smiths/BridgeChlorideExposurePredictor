@@ -42,7 +42,7 @@
 \begin{document}
 
 \title{Module Guide for Bridge Corrosion Predictor} 
-\author{Cynthia Liu}
+\author{\authname}
 \date{\today}
 
 \maketitle
@@ -105,14 +105,16 @@ This section records information for easy reference.
 
 Decomposing a system into modules is a commonly accepted approach to developing
 software.  A module is a work assignment for a programmer or programming
-team.  We advocate a decomposition
-based on the principle of information hiding.  This
+team~\citep{ParnasEtAl1984}.  In the best practices for scientific computing (SC),
+\citet{WilsonEtAl2013} advise a modular design, but are silent on the criteria
+to use to decompose the software into modules.  We advocate a decomposition
+based on the principle of information hiding~\citep{Parnas1972a}.  This
 principle supports design for change, because the ``secrets'' that each module
 hides represent likely future changes.  Design for change is valuable in SC,
 where modifications are frequent, especially during initial development as the
 solution space is explored.  
 
-Our design follows the rules layed out by, as follows:
+Our design follows the rules as laid out by \citet{ParnasEtAl1984}, as follows:
 \begin{itemize}
 \item System details that are likely to change independently should be the
   secrets of separate modules.
@@ -122,7 +124,7 @@ Our design follows the rules layed out by, as follows:
 \end{itemize}
 
 After completing the first stage of the design, the Software Requirements
-Specification (SRS), the Module Guide (MG) is developed. The MG
+Specification (SRS), the Module Guide (MG) is developed~\citep{ParnasEtAl1984}. The MG
 specifies the modular structure of the system and is intended to allow both
 designers and maintainers to easily identify the parts of the software.  The
 potential readers of this document are as follows:
@@ -268,7 +270,8 @@ between requirements and modules is listed in Table~\ref{TblRT}.
 
 \section{Module Decomposition} \label{SecMD}
 
-Modules are decomposed according to the principle of ``information hiding''. The \emph{Secrets} field in a module
+Modules are decomposed according to the principle of ``information hiding''
+proposed by \citet{ParnasEtAl1984}. The \emph{Secrets} field in a module
 decomposition is a brief statement of the design decision hidden by the
 module. The \emph{Services} field specifies \emph{what} the module will do
 without documenting \emph{how} to do it. For each module, a suggestion for the
@@ -447,7 +450,7 @@ to be implemented.
 \begin{description}
 \item[Secrets:] The data structure and algorithms for plotting data graphically. 
 \item[Services:] Provides plot function that can plot the results from Data Searching Module, used by Output Visualization module. 
-\item[Implemented By:] Plotly 
+\item[Implemented By:] ChartJS 
 \item[Type of Module:] Library
 \end{description}
 
@@ -501,7 +504,7 @@ NFR5 & all modules\\
 \section{Use Hierarchy Between Modules} \label{SecUse}
 
 In this section, the uses hierarchy between modules is
-provided. A {\em uses} B if
+provided. \citet{Parnas1978} said of two programs A and B that A {\em uses} B if
 correct execution of B may be necessary for A to complete the task described in
 its specification. That is, A {\em uses} B if there exist situations in which
 the correct functioning of A depends upon the availability of a correct
@@ -564,7 +567,7 @@ This section includes a link to \href{https://github.com/CynthiaLiu0805/BridgeCo
 
 
 \bibliographystyle {plainnat}
-\bibliography{../../../refs/References}
+\bibliography{MG}
 
 \newpage{}
 
