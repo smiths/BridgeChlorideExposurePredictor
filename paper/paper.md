@@ -32,7 +32,7 @@ bibliography: paper.bib
 ---
 
 # Summary
-The Bridge Chloride Exposure Predictor (BCEP) is a web-based tool designed to forecast future chloride exposure rates for bridges based on a calculation model [@MingsaiEtAl2024] developed by Dr. Mingsai Xu and Dr. Cancan Yang, with an assumption that the climate and traffic data is constant within a specific GRID_SIZE for a given JURISDICTION. This model integrates traffic and climate data to predict chloride exposure, specifically focusing on damage from deicing salts while excluding other factors such as mechanical wear or accidents. Currently, this model is validated for Ontario, Canada. A demonstration website for an accessible overview is available [here](https://bcep.onrender.com/). The tool can be used to investigate chloride exposure for new jurisdictions by providing new traffic and climate data.
+The Bridge Chloride Exposure Predictor (BCEP) is a web-based tool designed to forecast future chloride exposure rates for bridges based on a calculation model [@MingsaiEtAl2024] developed by Dr. Mingsai Xu and Dr. Cancan Yang, with an assumption that the climate and traffic data is constant within a specific GRID_SIZE for a given JURISDICTION. This model integrates traffic and climate data to predict chloride exposure, specifically focusing on damage from deicing salts while excluding other factors such as mechanical wear or accidents. Currently, this model is validated for Ontario, Canada. A demonstration website for an accessible overview is available [here](https://bcep.onrender.com/). The tool can be used to investigate chloride exposure for new jurisdictions by providing new traffic and climate data. The inputs, outputs, data requirements and theoretical models for BCEP are summarized in the [software requirements specification](https://smiths.github.io/BridgeChlorideExposurePredictor/SRS/SRS.pdf).
 
 # Statement of need
 
@@ -51,7 +51,7 @@ Proprietary tools exist for predicting and designing the service life of differe
 
 # Features and usage
 
-A quick start guide is provided in the [README.md](https://github.com/CynthiaLiu0805/BridgeCorrosion/blob/main/README.md) of the repository. 
+A quick start guide is provided in the [README.md](https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/README.md) of the repository. 
 
 As outlined in \autoref{fig:io}, there are two sources of input:
 
