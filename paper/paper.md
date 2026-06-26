@@ -11,7 +11,6 @@ tags:
 
 authors:
   - name: Yingxue (Cynthia) Liu
-    orcid: 0000-0000-0000-0000
     affiliation: 1
   - name: Mingsai Xu
     affiliation: 1
@@ -32,6 +31,7 @@ bibliography: paper.bib
 ---
 
 # Summary
+
 The Bridge Chloride Exposure Predictor (BCEP) is a web-based tool designed to forecast future chloride exposure rates for bridges based on a calculation model [@XuEtAl2024; @Xu2024] developed by Dr. Mingsai Xu and Dr. Cancan Yang, with an assumption that the climate and traffic data is constant within a specific GRID_SIZE for a given JURISDICTION. This model integrates traffic and climate data to predict chloride exposure, specifically focusing on damage from deicing salts while excluding other factors such as mechanical wear or accidents. Currently, this model is validated for Ontario, Canada. A demonstration website for an accessible overview is available [here](https://bcep.onrender.com/). The tool can be used to investigate chloride exposure for new jurisdictions by providing new traffic and climate data. The inputs, outputs, data requirements and theoretical models for BCEP are summarized in the [software requirements specification](https://smiths.github.io/BridgeChlorideExposurePredictor/SRS/SRS.pdf).
 
 # Statement of need
@@ -45,6 +45,10 @@ While existing research explores the relationship between chloride and corrosion
 Proprietary tools exist for predicting and designing the service life of different concrete bridge designs, such as [Life-365](https://life-365.org/), [STADIUM](https://www.simcotechnologies.com/what-we-do/stadium-technology-portfolio/stadium-overview/) and [COMSOL](https://www.comsol.com/) models.  However, these tools require an estimate of the expected chloride concentration in the environment around the bridge.  As far as we know BCEP is the first tool to determine this value for a given location via local traffic and climate data.
 
 # Software design
+
+[Module guide](https://smiths.github.io/BridgeChlorideExposurePredictor/Design/SoftArchitecture/MG.pdf) and [Module Interface Specification](https://smiths.github.io/BridgeChlorideExposurePredictor/Design/SoftDetailedDes/MIS.pdf)
+
+[Verification and Validation Plan](https://smiths.github.io/BridgeChlorideExposurePredictor/VnVPlan/VnVPlan.pdf) and [Verification and Validation Report](https://smiths.github.io/BridgeChlorideExposurePredictor/VnVReport/VnVReport.pdf).
 
 # Research impact statement
 
