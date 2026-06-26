@@ -26,7 +26,7 @@
 \begin{document}
 
 \title{System Verification and Validation Plan for Bridge Corrosion: A Chloride Exposure Prediction Model} 
-\author{Cynthia Liu}
+\author{\authname}
 \date{\today}
 	
 \maketitle
@@ -161,7 +161,7 @@ The objective of this document is to build confidence in the software's correctn
 % has already been verified by its implementation team.}
 
 \subsection{Relevant Documentation}
-The relevant documentation includes \href{https://github.com/CynthiaLiu0805/BridgeCorrosion/blob/main/docs/ProblemStatementAndGoals/ProblemStatement.pdf}{Problem Statement} which is the proposed idea, \href{https://github.com/CynthiaLiu0805/BridgeCorrosion/blob/main/docs/SRS/SRS.pdf}{Software Requirements Specifications} which outlines the requirement of the software. It would also be related to \href{https://github.com/CynthiaLiu0805/BridgeCorrosion/blob/main/docs/VnVReport/VnVReport.pdf}{VnV Report} which is a conclusion for validation and verification after the software is developed. The \href{https://github.com/CynthiaLiu0805/BridgeCorrosion/blob/main/docs/Design/SoftArchitecture/MG.pdf}{MG} and \href{https://github.com/CynthiaLiu0805/BridgeCorrosion/blob/main/docs/Design/SoftDetailedDes/MIS.pdf}{MIS} are also relevant.
+The relevant documentation includes \href{https://smiths.github.io/BridgeChlorideExposurePredictor/ProblemStatementAndGoals/ProblemStatement.pdf}{Problem Statement} which is the proposed idea, \href{https://smiths.github.io/BridgeChlorideExposurePredictor/SRS/SRS.pdf}{Software Requirements Specifications} which outlines the requirement of the software. It would also be related to \href{https://smiths.github.io/BridgeChlorideExposurePredictor/VnVReport/VnVReport.pdf}{VnV Report} which is a conclusion for validation and verification after the software is developed. The \href{https://smiths.github.io/BridgeChlorideExposurePredictor/Design/SoftArchitecture/MG.pdf}{MG} and \href{https://smiths.github.io/BridgeChlorideExposurePredictor/Design/SoftDetailedDes/MIS.pdf}{MIS} are also relevant.
 
  
 % \wss{Reference relevant documentation.  This will definitely include your SRS
@@ -284,7 +284,7 @@ Software validation plan is beyond the scope for BC as it may require additional
 \section{System Test Description}\label{STD}
 This section includes the system test that will be used for the functional requirements and non-functional requirements.
 \subsection{Tests for Functional Requirements}
-Functional requirements for BC are given in \href{https://github.com/CynthiaLiu0805/BridgeCorrosion/blob/main/docs/SRS/SRS.pdf}{SRS} section 5.1. There are three functional requirements for BC, R1 is related to the input, and R2 and R3 related to the output. Section \ref{t_input} describes the input tests related to R1, and the output test is discussed in section \ref{t_output}.
+Functional requirements for BC are given in \href{https://smiths.github.io/BridgeChlorideExposurePredictor/SRS/SRS.pdf}{SRS} section 5.1. There are three functional requirements for BC, R1 is related to the input, and R2 and R3 related to the output. Section \ref{t_input} describes the input tests related to R1, and the output test is discussed in section \ref{t_output}.
 \\
 
 % \wss{Subsets of the tests may be in related, so this section is divided into
@@ -462,7 +462,7 @@ How test will be performed: The automatic test will be performed by Python.
 
 \subsection{Tests for Nonfunctional Requirements}\label{TNR}
 
-Non-functional requirements for BC are given in \href{https://github.com/CynthiaLiu0805/BridgeCorrosion/blob/main/docs/SRS/SRS.pdf}{SRS} section 5.2. There are five non-functional requirements for BC, and four of them are described in the following sections correspondingly.
+Non-functional requirements for BC are given in \href{https://smiths.github.io/BridgeChlorideExposurePredictor/SRS/SRS.pdf}{SRS} section 5.2. There are five non-functional requirements for BC, and four of them are described in the following sections correspondingly.
 % \wss{The nonfunctional requirements for accuracy will likely just reference the
 %   appropriate functional tests from above.  The test cases should mention
 %   reporting the relative error for these tests.  Not all projects will
@@ -536,7 +536,7 @@ Input/Condition: None
 					
 Output/Result: Result of compilation.
 					
-How test will be performed: Use Github Actions to test if the software could be installed in multiple machines and environments. Also do manual test with potential users to install the software on their computers, see how good they are following the \href{https://github.com/CynthiaLiu0805/BridgeCorrosion/blob/main/README.md}{README} procedure.
+How test will be performed: Use Github Actions to test if the software could be installed in multiple machines and environments. Also do manual test with potential users to install the software on their computers, see how good they are following the \href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/README.md}{README} procedure.
 
 \end{enumerate}
 		
@@ -567,7 +567,7 @@ Test \ref{t_portability}        & & & & & & & X  \\ \hline
 %   requirements.}
 
 \section{Unit Test Description}\label{UTD}
-The source code for BC has following modules, they are corresponding to M2 to M14 in \href{https://github.com/CynthiaLiu0805/BridgeCorrosion/blob/main/docs/Design/SoftArchitecture/MG.pdf}{MG} and \href{https://github.com/CynthiaLiu0805/BridgeCorrosion/blob/main/docs/Design/SoftDetailedDes/MIS.pdf}{MIS}:
+The source code for BC has the following modules, they are corresponding to M2 to M14 in \href{https://smiths.github.io/BridgeChlorideExposurePredictor/Design/SoftArchitecture/MG.pdf}{MG} and \href{https://smiths.github.io/BridgeChlorideExposurePredictor/Design/SoftDetailedDes/MIS.pdf}{MIS}:
 \begin{itemize}
 \item input\_check.py (M2)
 \item main.py (M3)
@@ -608,7 +608,7 @@ All tests are automatic and performed by PyTest. The tests are classified by mod
 %\wss{Include a blurb here to explain why the subsections below cover the module. References to the MIS would be good.  You will want tests from a black box perspective and from a white box perspective.  Explain to the reader how the tests were selected.}
 
 \subsubsection{Calculation Module} \label{CM}
-The test cases in this section not only cover the calculation module, but also cover M8 to M14, as those modules are used here. The tests here are checking the value for each step of the calculation module, and their pass indicates the functionality of the encompassed modules as well. The expected output is from another verification from Matlab. Each test case is named to clearly declare its purpose. The code could be found in \href{https://github.com/CynthiaLiu0805/BridgeCorrosion/blob/main/src/database/test_calculation.py}{test\_calculation.py}.
+The test cases in this section not only cover the calculation module, but also cover M8 to M14, as those modules are used here. The tests here are checking the value for each step of the calculation module, and their pass indicates the functionality of the encompassed modules as well. The expected output is from another verification from Matlab. Each test case is named to clearly declare its purpose. The code could be found in \href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/src/database/test_calculation.py}{test\_calculation.py}.
 \begin{itemize}
 \item test\_deicing\_salts\_cal
 \item test\_melted\_water\_thickness
@@ -619,7 +619,7 @@ The test cases in this section not only cover the calculation module, but also c
 \end{itemize}
 
 \subsubsection{Calculation\_load Module} \label{CLM}
-The test cases in this section check if the traffic model and climate model used to generate the database has any missing values. Ideally, there would not be empty values as those models have been verified by their developers, this module is doing the double check. The code could be found in \href{https://github.com/CynthiaLiu0805/BridgeCorrosion/blob/main/src/database/test_model_input.py}{test\_model\_input.py}.
+The test cases in this section check if the traffic model and climate model used to generate the database has any missing values. Ideally, there would not be empty values as those models have been verified by their developers, this module is doing the double check. The code could be found in \href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/src/database/test_model_input.py}{test\_model\_input.py}.
 \begin{itemize}
 \item test\_longitude
 \item test\_latitude
@@ -631,32 +631,13 @@ The test cases in this section check if the traffic model and climate model used
 \end{itemize}
 
 \subsubsection{Input\_check Module} \label{ICM}
-This section covers the access programs in input\_check module. It includes some boundary cases for checking if a coordinate is within ontario. The coordinate includes both negative cases and positive cases and the software could handle them both. One worth noticing point here is the Ontario boundary only include the land, not the water. For example, the points on Lake Erie is not considered as within Ontario. The code could be found in \href{https://github.com/CynthiaLiu0805/BridgeCorrosion/blob/main/src/app/test_input_check.py}{test\_input\_check.py}.
-\begin{itemize}
-\item test\_load\_file
-\item test\_value\_error\_nonnumerical
-\item test\_value\_error\_empty
-\item test\_on\_ontario\_boundary
-\item test\_in\_ontario\_boundary
-\item test\_outside\_ontario\_boundary
-\item test\_lake\_on\_edge\_of\_ontario
-\end{itemize}
+This section covers the access programs in input\_check module. It includes some boundary cases for checking if a coordinate is within Ontario. The coordinate includes both negative cases and positive cases and the software could handle them both. One worth noticing point here is the Ontario boundary only include the land, not the water. For example, the points on Lake Erie is not considered as within Ontario. The code could be found in \href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/src/web/tests/unit/coordinateChecker.spec.js}{coordinateChecker.spec.js}.
 
 \subsubsection{Search Module} \label{SM}
-This section cover the access programs in search module. The main purpose for the test case is to demonstrate that the find\_closest method can differentiate between coordinates up to four decimal places. It also shows the method could work fine on large dataset. The code could be find in \href{https://github.com/CynthiaLiu0805/BridgeCorrosion/blob/main/src/app/test_search.py}{test\_search.py}
-\begin{itemize}
-\item test\_load\_data
-\item test\_find\_closest\_four\_decimal
-\item test\_find\_closest\_large\_dataset
-\end{itemize}
+This section cover the access programs in search module. The main purpose for the test case is to demonstrate that the find\_closest method can differentiate between coordinates up to four decimal places. It also shows the method could work fine on large dataset. The code could be find in \href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/src/web/tests/unit/dataSearching.spec.js}{dataSearching.spec.js}
 
 \subsubsection{Visualization Module} \label{VM}
-The most essential function of visualization module, plotting, is from the plotly library, so the unit test on plotting is not tested. Instead, we focus on verifying whether this function successfully generates output. Also, the helper function for generating sublist is tested, as to plot the graph we want to exclude the coordinate information in the beginning. The code could be find in \href{https://github.com/CynthiaLiu0805/BridgeCorrosion/blob/main/src/app/test_visualization.py}{test\_visualization.py}
-\begin{itemize}
-\item test\_generate\_sub\_keylist
-\item test\_generate\_sub\_valuelist
-\item test\_draw\_graph
-\end{itemize}
+The most essential function of visualization module, plotting, is from the Chart.js library, so the unit test on plotting is not tested. Instead, we focus on verifying whether this function successfully generates output. Also, the helper function for generating sublist is tested, as to plot the graph we want to exclude the coordinate information in the beginning. The visualization is tested manually.
 
 
 \subsection{Tests for Nonfunctional Requirements}
