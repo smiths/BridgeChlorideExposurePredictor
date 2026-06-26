@@ -61,14 +61,14 @@ This document includes the results of \href{https://smiths.github.io/BridgeChlor
 \section{Functional Requirements Evaluation}\label{FRE}
 This section covers the tests of the functional requirements.
 \subsection{Input tests - Coordinate}
-This test classifies the valid and invalid input from user. It is covered by unit testing in \href{https://smiths.github.io/BridgeChlorideExposurePredictor/src/app/test_input_check.py}{test\_input\_check.py}. All the test cases passed successfully. 
+This test classifies the valid and invalid input from user. It is covered by unit testing in \href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/src/web/tests/unit/coordinateChecker.spec.js}{coordinateChecker.spec.js}. All the test cases passed successfully. 
 
 
 \subsection{Input tests - Models}
-This test check if there are any missing values from the input climate and traffic model. It is achieved by unit testing in  \href{https://smiths.github.io/BridgeChlorideExposurePredictor/src/database/test_model_check.py}{test\_model\_input.py}. All the test cases passed successfully. 
+This test check if there are any missing values from the input climate and traffic model. It is achieved by unit testing in  \href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/src/database/test_model_input.py}{test\_model\_input.py}. All the test cases passed successfully. 
 
 \subsection{Output tests - Chloride exposure}
-This test checks if the output is reliable by comparing the actual result with the result from Matlab, which is also implemented by the author as a second way to ensure the accuracy. It is achieved by unit testing in  \href{https://smiths.github.io/BridgeChlorideExposurePredictor/src/database/test_calculation.py}{test\_calculation.py}. All the test cases passed successfully. 
+This test checks if the output is reliable by comparing the actual result with the result from Matlab, which is also implemented by the author as a second way to ensure the accuracy. It is achieved by unit testing in  \href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/src/database/test_calculation.py}{test\_calculation.py}. All the test cases passed successfully. 
 
 \section{Nonfunctional Requirements Evaluation}
 This section covers the tests of the non-functional requirements. 
@@ -95,7 +95,7 @@ The primary approach I used to enhance maintainability was to add comments and e
 
 
 \subsection{Portability}
-The author used Github Actions to test if the software could be installed in multiple machines and environments. Some manual testing is done by asking fellows to run the project following the \href{https://smiths.github.io/BridgeChlorideExposurePredictor/README.md}{Readme.md}, most of the process went smoothly, thought there are some problems:
+The author used Github Actions to test if the software could be installed in multiple machines and environments. Some manual testing is done by asking fellows to run the project following the \href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/README.md}{Readme.md}, most of the process went smoothly, though there were some problems:
 \begin{itemize}
 \item When installing make, user need to restart the Terminal or PowerShell to make it work. This is added to the readme.
 \item To run the python files, ``\textit{python filename.py}" works on most computers while some need to be ``\textit{python3 filename.py}". In the makefile it is set to python by default, but the alternative way to run section is added to readme for cases with python3.
@@ -105,27 +105,27 @@ The author used Github Actions to test if the software could be installed in mul
 This section shows the result of the other unit testing for this software. To re-generate the result, you can run ``\textit{make test}'' or ``\textit{pytest src/database/testfile.py}'' in the root folder of this repo, replacing \textit{testfile} with the actual file names. 
 
 \subsection{test\_calculation}
-All the test cases pass successfully thought there are some warnings. Check the \href{https://smiths.github.io/BridgeChlorideExposurePredictor/tests/test\_calculation.log}{log} for detail.
+All the test cases pass successfully thought there are some warnings.
 
 
 \subsection{test\_model\_input}
-All the test cases pass successfully. Check the \href{https://smiths.github.io/BridgeChlorideExposurePredictor/tests/test\_model\_input.log}{log} for detail.
+All the test cases pass successfully.
 
 
 \subsection{test\_input\_check}
-All the test cases pass successfully. Check the \href{https://smiths.github.io/BridgeChlorideExposurePredictor/tests/test\_input\_check.log}{log} for detail.
+All the test cases pass successfully.
 
 \subsection{test\_search}
-All the test cases pass successfully. Check the \href{https://smiths.github.io/BridgeChlorideExposurePredictor/tests/test\_search.log}{log} for detail.
+All the test cases pass successfully.
 \subsection{test\_visualization}
-All the test cases pass successfully. Check the \href{https://smiths.github.io/BridgeChlorideExposurePredictor/tests/test\_visualization.log}{log} for detail.
+All the manual test cases pass successfully.
 
 \section{Changes Due to Testing}
-Many minor bugs are fixed and more explanation are added for maintainability and portability. One important change is regarding precision: in the beginning the output results were rounded to two decimal places. However, after careful consideration, it seemed like that this level of precision might not be sufficient. This is to be discussed with Dr. Yang and Mingsai, but I dicide not to round it for now. Meanwhile, in the visualization, I still keep it as two decimal for readability when users putting mouses on the points on graph.  
-%\wss{This section should highlight how feedback from the users and from the supervisor (when one exists) shaped the final product.  In particular the feedback from the Rev 0 demo to the supervisor (or to potential users) should be highlighted.}
+
+Many minor bugs were fixed, and more explanation was added for maintainability and portability. One important change is regarding precision: in the beginning the output results were rounded to two decimal places. However, after careful consideration, it seemed like that this level of precision might not be sufficient. This is to be discussed with Dr.\ Yang and Mingsai, but I decided not to round it for now. Meanwhile, in the visualization, I still keep it as two decimal for readability when users putting mouses on the points on graph.  
 
 \section{Automated Testing}
-Continuous Integration (CI) is used for automated testing. The test cases using pytest are set up in GitHub Actions as \href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/.github/workflows/python-app.yml}{}. Whenever there is a new push, CI will run through all test cases to check if everything's working as expected.  The web app is also tested via a separate GitHub Action: \href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/.github/workflows/ci.yml}{ci.yml}.
+Continuous Integration (CI) is used for automated testing. The test cases using pytest are set up in GitHub Actions as \href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/.github/workflows/python-app.yml}{python-app.yml}. Whenever there is a new push, CI will run through all test cases to check if everything's working as expected.  The web app is also tested via a separate GitHub Action: \href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/.github/workflows/ci.yml}{ci.yml}.
 
 \section{Trace to Requirements}
 
@@ -137,9 +137,9 @@ Continuous Integration (CI) is used for automated testing. The test cases using 
 \hline
 \href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/src/database/test_calculation.py}{t\_calculation} & & X & X & X & & &  \\ \hline
 \href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/src/database/test_model_input.py}{t\_model\_input.py} & X & & & & & &  \\ \hline
-\href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/src/app/test_input_check.py}{t\_input\_check.py}        & X & & & & & &  \\ \hline
-\href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/src/app/test_search.py}{t\_search.py}  & & X & & & & &  \\ \hline
-\href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/src/app/test_visualization.py}{t\_visualization} & & & & & X & &  \\ \hline
+\href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/src/web/tests/unit/coordinateChecker.spec.js}{coordinateChecker.spec.js}        & X & & & & & &  \\ \hline
+\href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/src/web/tests/unit/dataSearching.spec.js}{dataSearching.spec.js}  & & X & & & & &  \\ \hline
+Manually test visualization & & & & & X & &  \\ \hline
 Test Reliability       & & & & X & & &  \\ \hline
 Test Usability       & & & & & X & &  \\ \hline
 Test Maintainability        & & & & & & X &  \\ \hline
@@ -162,9 +162,9 @@ Test Portability        & & & & & & & X  \\ \hline
 
 \href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/src/database/test_calculation.py}{t\_calculation}    & &  &  &  & X & X & X & X & X & X & X & X & X \\ \hline
 \href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/src/database/test_model_input.py}{t\_model\_input} & &  &  &  & X &  & &  &  &  &  &  & \\ \hline
-\href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/src/app/test_input_check.py}{t\_input\_check} & X & X &  &  &  &  & &  &  &  &  &  & \\ \hline
-\href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/src/app/test_search.py}{t\_search.py} & & X & X &  &  &  & &  &  &  &  &  & \\ \hline
-\href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/src/app/test_visualization.py}{t\_visualization} & &  &  & X &&  &  &  \\ \hline
+\href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/src/web/tests/unit/coordinateChecker.spec.js}{coordinateChecker.spec.js} & X & X &  &  &  &  & &  &  &  &  &  & \\ \hline
+\href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/src/web/tests/unit/dataSearching.spec.js}{dataSearching.spec.js} & & X & X &  &  &  & &  &  &  &  &  & \\ \hline
+Manually test visualization & &  &  & X & &  &  & & & & &  & \\ \hline
 
 \end{tabular}
 \caption{Traceability Between Test Cases and Modules}
