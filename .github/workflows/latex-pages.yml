@@ -65,18 +65,25 @@ jobs:
           # Copy PDFs preserving structure
           rsync -av build-pdf/ public/
           
+          # Generate PDF list (paths relative to site root) - OLD
+          #PDF_LIST=$(find public -name "*.pdf" | sort | sed 's|^public/||' | awk -F/ '
+          #{
+          #  dir = $1
+          #  file = $NF
+          #  groups[dir] = groups[dir] "<li><a href=\"" $0 "\">" file "</a></li>\n"
+          #}
+          #END {
+          #  for (dir in groups) {
+          #    printf "<h2>%s</h2>\n<ul>\n%s</ul>\n", dir, groups[dir]
+          #  }
+          #}')
+
           # Generate PDF list (paths relative to site root)
-          PDF_LIST=$(find public -name "*.pdf" | sort | sed 's|^public/||' | awk -F/ '
-          {
-            dir = $1
-            file = $NF
-            groups[dir] = groups[dir] "<li><a href=\"" $0 "\">" file "</a></li>\n"
-          }
-          END {
-            for (dir in groups) {
-              printf "<h2>%s</h2>\n<ul>\n%s</ul>\n", dir, groups[dir]
-            }
-          }')
+          PDF_LIST=$(
+          while read -r pdf; do
+            echo "$pdf"
+          done < site/order.txt
+          )
 
           # Ensure site template exists
           test -f site/index.html
