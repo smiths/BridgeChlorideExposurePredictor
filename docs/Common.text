@@ -1,7 +1,7 @@
 %% Common Parts
 
 \newcommand{\progname}{BridgeChlorideExposurePredictor} % PUT YOUR PROGRAM NAME HERE
-\newcommand{\authname}{Cynthia Liu} % AUTHOR NAMES                  
+\newcommand{\authname}{Cynthia Liu, Spencer Smith} % AUTHOR NAMES                  
 
 \usepackage{hyperref}
     \hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, filecolor=blue,
