@@ -58,6 +58,7 @@ March 6, 2024 & 0.0 & Initial release\\
 March 18, 2024 & 0.1 & Edit according to feedback from peer review \\
 April 5, 2024 & 1 & Edit according to feedback from Dr. Smith\\
 July 3, 2024 & 1.1 & Add module for chloride on deck\\
+June 29, 2026 & 1.2 & Add table mapping between modules and code\\
 \bottomrule
 \end{tabularx}
 
@@ -561,14 +562,42 @@ The specific timeline for module implementation is shown in below table:
 \caption{Timeline}
 \end{table}
 
+\section{Mapping Between Modules and Code}
+\begin{table}[h!]
+\centering
+\begin{tabular}{p{0.6\textwidth} p{0.2\textwidth}}
+\toprule
+\textbf{Module} & \textbf{Code}\\
+\midrule
 
-\section{Appendix}
-This section includes a link to \href{https://github.com/CynthiaLiu0805/BridgeCorrosion/blob/main/docs/SRS/SRS.pdf}{SRS} for requirements.
+{Hardware-Hiding (\mref{mHardware})} & OS \\
+Input (\mref{mInput}) & \href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/src/web/src/scripts/CoordinateChecker.js}{CoordinateChecker.js}\\
+Control (\mref{mControl}) & \href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/src/web/src/main.js}{main.js}\\
+Data Searching (\mref{mSearch}) & \href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/src/web/src/scripts/DataSearching.js} {DataSearching.js}\\
+Output Visualization (\mref{mOutput}) & \href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/src/web/src/scripts/DataVisualization.js}{DataVisualization.js}\\
+Data Model Reading (\mref{mDataModel}) & \href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/src/database/calculation_load.py}{calculation\_load.py}\\
+Constant (\mref{mConstant}) & \href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/src/database/constant.py}{constant.py}\\
+Deicing Salts Calculation (\mref{mCalculation_step1}) & \href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/src/database/deicing_salts_cal.py}{deicing\_salts\_cal.py}\\
+Melted Water Thickness Calculation (\mref{mCalculation_step2}) & \href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/src/database/melted_water_thickness.py}{melted\_water\_thickness.py}\\
+Single Water SAS Calculation (\mref{mCalculation_step3}) & \href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/src/database/single_water_SAS_cal.py}{single\_water\_SAS\_cal.py}\\
+Single Chloride Ions SAS Calculation (\mref{mCalculation_step4}) & \href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/src/database/single_Cl_SAS_cal.py}{single\_Cl\_SAS\_cal.py}\\
+All Chloride Ions SAS Calculation (\mref{mCalculation_step5}) & \href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/src/database/all_Cl_SAS_cal.py} {all\_Cl\_SAS\_cal.py}\\
+Chloride on Pier Calculation (\mref{mCalculation_step6}) & \href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/src/database/chloride_on_pier.py}{chloride\_on\_pier.py}\\
+Chloride on Deck Calculation (\mref{mCalculation_result}) & \href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/src/database/chloride_on_deck.py}{chloride\_on\_deck.py}\\
+Chloride Exposure Database Generation (\mref{mCalculation_result}) & \href{https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/src/database/calculation.py}{calculation.py}\\
+File I/O (\mref{mFileIO}) & html2campus\\
+Plotting  (\mref{mPlot}) & Chart.js\\
+\bottomrule
 
+\end{tabular}
+\caption{Module Mapping to Code}
+\label{TbMM2C}
+\end{table}
+
+\newpage
 
 \bibliographystyle {plainnat}
 \bibliography{MG}
 
-\newpage{}
 
 \end{document}
