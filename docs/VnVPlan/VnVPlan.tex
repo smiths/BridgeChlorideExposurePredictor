@@ -106,7 +106,7 @@ $t_2$ & days & number of days with snow melting\\
 
   AADT & Annual Average Daily Traffic\\
   AADTT & Annual Average Daily Truck Traffic \\
-  BC & Bridge Corrosion\\
+  BCEP & Bridge Corrosion Exposure Predictor\\
   CI & Continuous Integration\\
   FR & Functional Requirement\\
   MG & Module Guide\\
@@ -131,7 +131,7 @@ $t_2$ & days & number of days with snow melting\\
 
 \section{General Information}
 
-This document provides the road-map of the verification and validation plan for Bridge Corrosion (BC), to ensure the requirements and goals of the program mentioned in the SRS. The organization of this document starts with the general information and verification plans, followed by the system test and unit test description for functional and non-functional requirements. 
+This document provides the road-map of the verification and validation plan for Bridge Corrosion Exposure Predictor (BCEP), to ensure the requirements and goals of the program mentioned in the SRS. The organization of this document starts with the general information and verification plans, followed by the system test and unit test description for functional and non-functional requirements. 
 
 \subsection{Summary}
 
@@ -140,7 +140,7 @@ This document provides the road-map of the verification and validation plan for 
 BC provides predictive trends for chloride exposure based on user-input coordinates within the province of Ontario. The software utilizes climate and traffic models to build a chloride exposure database, and search for the trends when a user inputs location data.
 
 \subsection{Objectives}
-The objective of this document is to build confidence in the software's correctness and increase its realiability. All functional requirements mentioned in SRS are tested. We cover a usability test and a maintainability test althought the number of participants is limited. We also assume the climate and traffic models we generate online have been verified by their implementation team so their accuracy is ensured. 
+The objective of this document is to build confidence in the software's correctness and increase its reliability. All functional requirements mentioned in SRS are tested. We cover a usability test and a maintainability test, although the number of participants is limited. We also assume the climate and traffic models we generate online have been verified by their implementation team, so their accuracy is ensured. 
 
 
 % \wss{State what is intended to be accomplished.  The objective will be around
@@ -262,7 +262,7 @@ The software will be done in Python and so does the automated testing. During th
 %   implementation.}
 
 \subsection{Software Validation Plan}\label{SVP}
-Software validation plan is beyond the scope for BC as it may require additional time, expertise, and resources that are not available within the scope of the project. The validation process, should be done by the domain expert, which include ensuring the models and formulas that this project are using are correct.
+Software validation plan is beyond the scope for BCEP as it may require additional time, expertise, and resources that are not available within the scope of the project. The validation process, should be done by the domain expert, which include ensuring the models and formulas that this project are using are correct.
 % \wss{If there is any external data that can be used for validation, you should
 %   point to it here.  If there are no plans for validation, you should state that
 %   here.}
@@ -284,7 +284,7 @@ Software validation plan is beyond the scope for BC as it may require additional
 \section{System Test Description}\label{STD}
 This section includes the system test that will be used for the functional requirements and non-functional requirements.
 \subsection{Tests for Functional Requirements}
-Functional requirements for BC are given in \href{https://smiths.github.io/BridgeChlorideExposurePredictor/SRS/SRS.pdf}{SRS} section 5.1. There are three functional requirements for BC, R1 is related to the input, and R2 and R3 related to the output. Section \ref{t_input} describes the input tests related to R1, and the output test is discussed in section \ref{t_output}.
+Functional requirements for BCEP are given in \href{https://smiths.github.io/BridgeChlorideExposurePredictor/SRS/SRS.pdf}{SRS} section 5.1. There are three functional requirements for BCEP, R1 is related to the input, and R2 and R3 related to the output. Section \ref{t_input} describes the input tests related to R1, and the output test is discussed in section \ref{t_output}.
 \\
 
 % \wss{Subsets of the tests may be in related, so this section is divided into
@@ -462,7 +462,7 @@ How test will be performed: The automatic test will be performed by Python.
 
 \subsection{Tests for Nonfunctional Requirements}\label{TNR}
 
-Non-functional requirements for BC are given in \href{https://smiths.github.io/BridgeChlorideExposurePredictor/SRS/SRS.pdf}{SRS} section 5.2. There are five non-functional requirements for BC, and four of them are described in the following sections correspondingly.
+Non-functional requirements for BCEP are given in \href{https://smiths.github.io/BridgeChlorideExposurePredictor/SRS/SRS.pdf}{SRS} section 5.2. There are five non-functional requirements for BCEP, and four of them are described in the following sections correspondingly.
 % \wss{The nonfunctional requirements for accuracy will likely just reference the
 %   appropriate functional tests from above.  The test cases should mention
 %   reporting the relative error for these tests.  Not all projects will
@@ -567,7 +567,7 @@ Test \ref{t_portability}        & & & & & & & X  \\ \hline
 %   requirements.}
 
 \section{Unit Test Description}\label{UTD}
-The source code for BC has the following modules, they are corresponding to M2 to M14 in \href{https://smiths.github.io/BridgeChlorideExposurePredictor/Design/SoftArchitecture/MG.pdf}{MG} and \href{https://smiths.github.io/BridgeChlorideExposurePredictor/Design/SoftDetailedDes/MIS.pdf}{MIS}:
+The source code for BCEP has the following modules, they are corresponding to M2 to M14 in \href{https://smiths.github.io/BridgeChlorideExposurePredictor/Design/SoftArchitecture/MG.pdf}{MG} and \href{https://smiths.github.io/BridgeChlorideExposurePredictor/Design/SoftDetailedDes/MIS.pdf}{MIS}:
 \begin{itemize}
 \item input\_check.py (M2)
 \item main.py (M3)

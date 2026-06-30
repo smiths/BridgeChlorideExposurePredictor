@@ -76,7 +76,7 @@ This section records information for easy reference.
   \textbf{symbol} & \textbf{description}\\
   \midrule 
   AC & Anticipated Change\\
-  BCP & Bridge Corrosion Predictor\\
+  BCEP & Bridge Corrosion Exposure Predictor\\
   DAG & Directed Acyclic Graph \\
   GUI & Graphical User Interface \\
   M & Module \\
@@ -299,7 +299,7 @@ to be implemented.
 \subsection{Behaviour-Hiding Module}
 
 \begin{description}
-\item[Secrets:]The contents of the required behaviours.
+\item[Secrets:] The contents of the required behaviours.
 \item[Services:]Includes programs that provide externally visible behaviour of
   the system as specified in the software requirements specification (SRS)
   documents. This module serves as a communication layer between the
@@ -313,7 +313,7 @@ to be implemented.
 \begin{description}
 \item[Secrets:] The kind of valid and invalid input coordinate data. 
 \item[Services:] Get input from the user and verify if the input is within the physical and software constraint, throw warning message if it is not. 
-\item[Implemented By:] BCP
+\item[Implemented By:] BCEP
 \item[Type of Module:] Abstract Data Type
 \end{description}
 
@@ -322,7 +322,7 @@ to be implemented.
 \begin{description}
 \item[Secrets:] The algorithm for running the program.
 \item[Services:] Provide the main program and the GUI.
-\item[Implemented By:] BCP
+\item[Implemented By:] BCEP
 \item[Type of Module:] Library
 \end{description}
 
@@ -330,7 +330,7 @@ to be implemented.
 \begin{description}
 \item[Secrets:] The database structure.
 \item[Services:] Find the data needed in the database by searching algorithm.
-\item[Implemented By:] BCP
+\item[Implemented By:] BCEP
 \item[Type of Module:] Abstract Data Type
 \end{description}
 
@@ -338,7 +338,7 @@ to be implemented.
 \begin{description}
 \item[Secrets:] The format and structure of the output chloride exposure data.
 \item[Services:] Provide the visualization of the resulting chloride exposure trend, using line graph or histogram. 
-\item[Implemented By:] BCP
+\item[Implemented By:] BCEP
 \item[Type of Module:] Library
 \end{description}
 
@@ -347,7 +347,7 @@ to be implemented.
 \begin{description}
 \item[Secrets:] The origin climate model and traffic model that the calculation is based on.
 \item[Services:]  Read data from the climate model and traffic model and store them in the data structure needed for further calculation.
-\item[Implemented By:] BCP
+\item[Implemented By:] BCEP
 \item[Type of Module:] Abstract Data Type
 \end{description}
 
@@ -356,7 +356,7 @@ to be implemented.
 \begin{description}
 \item[Secrets:] The constant used during calculation.
 \item[Services:] Store the constant for mantainability purpose.
-\item[Implemented By:] BCP
+\item[Implemented By:] BCEP
 \item[Type of Module:] Abstract Data Type
 \end{description}
 
@@ -364,7 +364,7 @@ to be implemented.
 \begin{description}
 \item[Secrets:] The formula to determine the quantity of deicing salts applied per day with snowfall.
 \item[Services:] Calculate and store the quantity of deicing salts applied per day with snowfall.
-\item[Implemented By:] BCP
+\item[Implemented By:] BCEP
 \item[Type of Module:] Abstract Object
 \end{description}
 
@@ -372,7 +372,7 @@ to be implemented.
 \begin{description}
 \item[Secrets:] The formula to determine the thickness of melted water per day with snow melting.
 \item[Services:] Calculate and store the thickness of melted water per day with snow melting.
-\item[Implemented By:] BCP
+\item[Implemented By:] BCEP
 \item[Type of Module:] Abstract Object
 \end{description}
 
@@ -380,7 +380,7 @@ to be implemented.
 \begin{description}
 \item[Secrets:] The formula to determine water sprayed and splashed by one truck using a Computational Fluid Dynamics (CFD)-based analytical model.
 \item[Services:] Calculate and store the water sprayed and splashed by one truck.
-\item[Implemented By:] BCP
+\item[Implemented By:] BCEP
 \item[Type of Module:] Abstract Object
 \end{description}
 
@@ -388,7 +388,7 @@ to be implemented.
 \begin{description}
 \item[Secrets:] The formula to determine chloride ions sprayed and splashed by one truck.
 \item[Services:] Calculate and store the chloride ions sprayed and splashed by one truck.
-\item[Implemented By:] BCP
+\item[Implemented By:] BCEP
 \item[Type of Module:] Abstract Object
 \end{description}
 
@@ -396,7 +396,7 @@ to be implemented.
 \begin{description}
 \item[Secrets:] The formula to determine chloride ions sprayed and splashed by all vehicles in one winter season.
 \item[Services:] Calculate and store the chloride ions sprayed and splashed by all vehicles in one winter season.
-\item[Implemented By:] BCP
+\item[Implemented By:] BCEP
 \item[Type of Module:] Abstract Object
 \end{description}
 
@@ -404,7 +404,7 @@ to be implemented.
 \begin{description}
 \item[Secrets:] The formula to determine the deposition of chloride on the pier of the bridge substructure.
 \item[Services:] Calculate and store the deposition of chloride on the pier of the bridge substructure.
-\item[Implemented By:] BCP
+\item[Implemented By:] BCEP
 \item[Type of Module:] Abstract Object
 \end{description}
 
@@ -412,7 +412,7 @@ to be implemented.
 \begin{description}
 \item[Secrets:] The formula to determine the deposition of chloride on the deck of the bridge substructure.
 \item[Services:] Calculate and store the deposition of chloride on the deck of the bridge substructure.
-\item[Implemented By:] BCP
+\item[Implemented By:] BCEP
 \item[Type of Module:] Abstract Object
 \end{description}
 
@@ -421,7 +421,7 @@ to be implemented.
 \begin{description}
 \item[Secrets:] The detail formula for calculating the chloride exposure database.
 \item[Services:] Save the chloride exposure data to the database to be used by the user end.
-\item[Implemented By:] BCP
+\item[Implemented By:] BCEP
 \item[Type of Module:] Abstract Object
 \end{description}
 
