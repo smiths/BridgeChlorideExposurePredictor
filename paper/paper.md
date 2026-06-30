@@ -32,7 +32,7 @@ bibliography: paper.bib
 
 # Summary
 
-The Bridge Chloride Exposure Predictor (BCEP) is a web-based tool designed to forecast future chloride exposure rates for bridges based on a calculation model [@XuEtAl2024; @Xu2024] developed by Dr. Mingsai Xu and Dr. Cancan Yang, with an assumption that the climate and traffic data is constant within a specific GRID_SIZE for a given JURISDICTION. This model integrates traffic and climate data to predict chloride exposure, specifically focusing on damage from deicing salts while excluding other factors such as mechanical wear or accidents. Currently, this model is validated for Ontario, Canada. A demonstration website for an accessible overview is available [here](https://bcep.onrender.com/). The tool can be used to investigate chloride exposure for new jurisdictions by providing new traffic and climate data. The inputs, outputs, data requirements and theoretical models for BCEP are summarized in the [Software Requirements Specification (SRS)](https://smiths.github.io/BridgeChlorideExposurePredictor/SRS/SRS.pdf).
+The Bridge Chloride Exposure Predictor (BCEP) is a web-based tool designed to forecast future chloride exposure rates for bridges based on a calculation model developed by Xu and Yang [@XuEtAl2024; @Xu2024], with an assumption that the climate and traffic data is constant within a specific GRID_SIZE for a given JURISDICTION. This model integrates traffic and climate data to predict chloride exposure, specifically focusing on damage from deicing salts while excluding other factors such as mechanical wear or accidents. Currently, this model is validated for Ontario, Canada. A [demonstration website](https://bcep.onrender.com/) is available for an accessible overview. The tool can be used to investigate chloride exposure for new jurisdictions by providing new traffic and climate data. The inputs, outputs, data requirements and theoretical models for BCEP are summarized in the [Software Requirements Specification (SRS)](https://smiths.github.io/BridgeChlorideExposurePredictor/SRS/SRS.pdf).
 
 # Statement of need
 
@@ -42,25 +42,21 @@ While existing research explores the relationship between chloride and corrosion
 
 # State of the field
 
-Proprietary tools exist for predicting and designing the service life of different concrete bridge designs, such as [Life-365](https://life-365.org/), [STADIUM](https://www.simcotechnologies.com/what-we-do/stadium-technology-portfolio/stadium-overview/) and [COMSOL](https://www.comsol.com/) models.  However, these tools require an estimate of the expected chloride concentration in the environment around the bridge.  As far as we know BCEP is the first tool to determine this value for a given location via local traffic and climate data.
+Proprietary tools exist for predicting and designing the service life of different concrete bridge designs, such as [Life-365](https://life-365.org/), [STADIUM](https://www.simcotechnologies.com/what-we-do/stadium-technology-portfolio/stadium-overview/) and [COMSOL](https://www.comsol.com/) models.  However, these tools require an estimate of the expected chloride concentration in the environment around the bridge.  As far as we know BCEP is the first tool to determine and visualize this value for a given location via local traffic and climate data.
 
 # Software design
 
-[Module guide](https://smiths.github.io/BridgeChlorideExposurePredictor/Design/SoftArchitecture/MG.pdf) and [Module Interface Specification](https://smiths.github.io/BridgeChlorideExposurePredictor/Design/SoftDetailedDes/MIS.pdf)
+BCEP consists of Python code and JavaScript with Vue.  The Python code is for converting the raw climate and traffic data into a database covering the jurisdiction of interest.  The JavaScript and Vue are used for the web application, which provides a graphical view for input and output.  Javascript and Vue were chosen because they integrate well with map data so that the jurisdiction of interest can be visualized, and mouse click input can be geographically restricted.  Vue simplifies UI development by introducing a declarative programming model. The [installation instructions](https://github.com/smiths/BridgeChlorideExposurePredictor) are for a Python virtual environment, so installation is isolated to not interfere with the developers usual build environment. The Python and JavaScript combination make the software portable between Windows, Mao OS, and Linux.
 
-[Verification and Validation Plan](https://smiths.github.io/BridgeChlorideExposurePredictor/VnVPlan/VnVPlan.pdf) and [Verification and Validation Report](https://smiths.github.io/BridgeChlorideExposurePredictor/VnVReport/VnVReport.pdf).
+The design of the software is based on the principle of information hiding [@Parnas1972a].  That is, the design is decomposed around likely changes, which become the secrets of the modules.  Likely changes include the algorithm for calculating chloride exposure and the method for graphing the data.  The software is divided into 17 modules, including modules for input, control, constants, chloride on pier calculations and plotting.  The details of the decomposition, and the mapping between the conceptual design and the source code, can be found in the [Module guide](https://smiths.github.io/BridgeChlorideExposurePredictor/Design/SoftArchitecture/MG.pdf).  The module guide, which includes the uses relation between modules, is based on Parnas's ideas for documenting the software architecture [@ParnasAndWeiss2001, @ParnasEtAl1984].  The interface provided by each module is documented in the [Module Interface Specification](https://smiths.github.io/BridgeChlorideExposurePredictor/Design/SoftDetailedDes/MIS.pdf) (MIS).  The MIS follows the approach presented by Hoffman and Strooper [@HoffmanAndStrooper1995] and later adapted for scientific computing software [@SmithAndYu2009; @ElSheikhEtAl2004].
 
-Why webapp.
+BCEP has been verified following the [Verification and Validation Plan](https://smiths.github.io/BridgeChlorideExposurePredictor/VnVPlan/VnVPlan.pdf), results of which are show in the [Verification and Validation Report](https://smiths.github.io/BridgeChlorideExposurePredictor/VnVReport/VnVReport.pdf).
 
 # Research impact statement
 
-Used as part of PhD thesis [@Xu2024].
+BCEP was developed to assist with Xu's PhD research "[Lifetime Serviceability and Safety of Highway Bridges Under Climate Change"](https://macsphere.mcmaster.ca/items/6db75554-2473-4645-9447-7f5f2de12120) [@Xu2024].  Xu's dissertation addresses the growing challenge of ensuring the serviceability and safety of concrete highway bridges amidst climate change.  Using BCEP future researchers will be able to continue to investigate the effects of climate change on bridges safety.  Xu's research focused on Canada, but the tool was designed to be usable in other jurisdictions by [updating the traffic and climate data](#customization).
 
-Climate change research.  Refs from Xu thesis and paper.
-
-Cynthia's MEng report [@Liu2024].
-
-
+Although not the main purpose of BCEP, there is a secondary research impact.  BCEP was used as a case study for applying software engineering principles (like information hiding) and methodologies (like modular decomposition) to scientific computing software.  This work is documented in the report ["A Collaborative Framework Toward Minimizing Pain Points in Research Software Development"](https://macsphere.mcmaster.ca/items/bdf6d1c2-a8cd-476f-9d6b-235f65d645af) [@Liu2024]. The report describes a practical framework to empower small teams of domain experts and developers to collaboratively build sustainable research software. The framework addresses common pain points of evolving requirements and researchers’ limited technical familiarity. Central to the approach is structured requirements elicitation, where developers guide domain experts through targeted questions about theories, typical uses cases, computational problem scale and possible tests. The answers directly inform modular design, verification, and documentation.
 
 # Features and usage
 
@@ -140,9 +136,10 @@ To ensure the tool functions correctly, the Excel file must follow specific nami
 
 # AI Usage Disclosure
 
-AI was not used for coding or documentation.  However, AI was used for brainstorming content for the [CONTRIBUTING.md](https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/CONTRIBUTING.md) guide, the [CodeOfConduct.md](https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/CodeOfConduct.md) and the continuous deployment of the documentation via a [GitHub Action](https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/.github/workflows/latex-pages.yml).  In all cases the tool used was ChatGPT based on GPT-5.5.
+AI was not used for coding or documentation.  However, AI was used for brainstorming content for the [CONTRIBUTING.md](https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/CONTRIBUTING.md) guide, the [CodeOfConduct.md](https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/CodeOfConduct.md) and the continuous deployment of the documentation via a [GitHub Action](https://github.com/smiths/BridgeChlorideExposurePredictor/blob/main/.github/workflows/latex-pages.yml).  In all cases the tool used was ChatGPT based on GPT-5.5.  The human authors have reviewed, verified and edited all AI suggested text.
 
 # Acknowledgements
+
 We acknowledge the insights and suggestions from Dr. Cancan Yang during the development of this program and the preparation of this paper.
 
 # References
