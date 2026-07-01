@@ -69,7 +69,7 @@ As outlined in \autoref{fig:io}, there are two sources of input:
 
 <div align="center">
 
-![Input and Output of BCEP](img/inputoutput.png)
+![Input and Output of BCEP](img/inputoutput.png){#fig:io}
 
 </div>
 
