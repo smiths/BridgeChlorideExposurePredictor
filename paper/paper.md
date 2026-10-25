@@ -21,13 +21,9 @@ affiliations:
  - name: McMaster University, Canada
    index: 1
    ror: 02fa3aq29
-date: 27 June 2026
+date: 25 Oct 2026
 bibliography: paper.bib
 
-# Optional fields if submitting to a AAS journal too, see this blog post:
-# https://blog.joss.theoj.org/2018/12/a-new-collaboration-with-aas-publishing
-# aas-doi: 10.3847/xxxxx <- update this with the DOI from AAS once you know it.
-# aas-journal: Astrophysical Journal <- The name of the AAS journal.
 ---
 
 # Summary
