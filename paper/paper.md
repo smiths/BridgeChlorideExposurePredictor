@@ -9,18 +9,11 @@ tags:
   - Structural health monitoring
 
 
-authors:
-  - name: Yingxue (Cynthia) Liu
-    affiliation: 1
-  - name: Mingsai Xu
-    affiliation: 1
-  - name: Spencer Smith
-    orcid: 0000-0002-0760-0987
-    affiliation: 1  
-affiliations:
- - name: McMaster University, Canada
-   index: 1
-   ror: 02fa3aq29
+author: 
+  - Yingxue (Cynthia) Liu
+  - Mingsai Xu
+  - Spencer Smith
+  - McMaster University, Canada
 date: 25 Oct 2026
 bibliography: paper.bib
 
