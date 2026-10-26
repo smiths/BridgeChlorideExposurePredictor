@@ -1,5 +1,5 @@
 ---
-title: 'Bridge Chloride Exposure Predictor: a web-based tool that to forecast the future chloride exposure rates for bridges'
+title: 'Bridge Chloride Exposure Predictor: a web-based tool to forecast the future chloride exposure rates for bridges'
 tags:
   - Python
   - Vue
